@@ -14,11 +14,15 @@ module FF_D(input wire clock, reset, enable, d, output reg Y);
   end
 endmodule
 
-//Ejercicio 2 - Flip Flop tipo T de 1 bit
+//Flip Flop tipo JK de 1 bit
 
-module FF_T(input wire clock, reset, enable, output wire Y);
-  wire d;
-  assign d = ~Y;
-  FF_D G1(clock, reset, enable, d, Y);
+module FF_JK(input wire clock, reset, enable, J, K, output wire Q);
+  wire w1, w2;
+
+  FF_D G1(clock, reset, enable, QF, Q);
+
+  and U1(w1, ~Q, J);
+  and U2(w2, Q, ~K);
+  or U3(QF, w1, w2);
 
 endmodule
