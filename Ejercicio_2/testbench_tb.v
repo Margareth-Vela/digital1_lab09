@@ -15,7 +15,7 @@ module testbench();
 
   initial begin
   $display("\n");
-    $display("Flip Flop Tipo T - Ejercicio 1");
+    $display("Flip Flop Tipo T - Ejercicio 2");
     $display("\n");
     $display(" Clk RST | EN |   Y    ");
     $display(" --------------------- ");
